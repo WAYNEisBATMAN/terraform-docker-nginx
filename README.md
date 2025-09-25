@@ -120,7 +120,7 @@ Here’s how Nginx looks when accessed externally via the EC2 public IP:
 
 ---
 
-## 🐛⚠️ Troubleshooting
+## 🐛 Troubleshooting
 
 NSG inbound rule for NGINX (Azure)
 Field	Value
@@ -141,5 +141,6 @@ Common issues and their solutions:
 | Container name already exists  | Run `terraform destroy` first                             |
 | Port already in use            | Change `external_port` in `variables.tf`                  |
 | Permission denied              | Add user to Docker group: `sudo usermod -aG docker $USER` |
+| Port not accessible externally | **AWS:** Update security group to allow the external port<br>**Azure:** Update NSG inbound rule to allow the external port |
 
 ---
