@@ -120,7 +120,7 @@ Here’s how Nginx looks when accessed externally via the EC2 public IP:
 
 ---
 
-🐛 Troubleshooting
+### 🐛 Troubleshooting
 
 NSG inbound rule for NGINX (Azure)
 Field	Value
@@ -135,11 +135,13 @@ Priority	350
 
 Common issues and solutions:
 
-Issue	Solution
-docker daemon not running	Start Docker: sudo systemctl start docker
-container name already exists	Run terraform destroy first
-port already in use	Change external_port in variables
-permission denied	Add user to docker group: sudo usermod -aG docker $USER
+## ⚠️ Common Issues & Solutions
 
+| Issue                          | Solution                                                  |
+|------------------------------- |-----------------------------------------------------------|
+| Docker daemon not running      | Start Docker: `sudo systemctl start docker`               |
+| Container name already exists  | Run `terraform destroy` first                             |
+| Port already in use            | Change `external_port` in `variables.tf`                  |
+| Permission denied              | Add user to Docker group: `sudo usermod -aG docker $USER` |
 
 ---
