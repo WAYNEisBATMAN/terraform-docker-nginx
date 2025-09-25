@@ -2,26 +2,37 @@
 
 ## 📌 Overview
 
-This project provisions an **Nginx web server** inside a Docker container using **Terraform**.  
-It demonstrates how Terraform can manage containerized workloads using the [Docker Provider](https://registry.terraform.io/providers/kreuzwerker/docker).
+This project demonstrates **Infrastructure as Code (IaC)** by provisioning an **Nginx web server** inside a Docker container using **Terraform**. It showcases how Terraform can efficiently manage containerized workloads using the [Docker Provider](https://registry.terraform.io/providers/kreuzwerker/docker).
 
 ---
 
 ## 🚀 Features
 
-- Pulls the latest Nginx Docker image
-- Runs Nginx container with port mapping
-- Uses variables for flexibility (container name, port, image)
-- Outputs the URL to access the server
+- Pulls the latest Nginx Docker image automatically
+- Runs Nginx container with configurable port mapping and container settings
+- Parameterized variables for flexibility (container/image name, port numbers)
+- Clean resource management with proper lifecycle
+- Organized project structure following best practices
+- Easy cleanup with terraform destroy
+
 
 ---
 
 ## 🛠️ Prerequisites
 
-- [Terraform](https://developer.hashicorp.com/terraform/downloads) >= 1.12
-- [Docker](https://docs.docker.com/get-docker/) installed and running
+- Infrastructure Provisioning: [Terraform](https://developer.hashicorp.com/terraform/downloads) >= 1.12
+- Container Runtime: [Docker](https://docs.docker.com/get-docker/) installed and running  
 
+Verify installation:
+
+   ```bash
+   terraform --version
+   docker --version
+
+   ```
 ---
+
+
 
 ## 📂 Project Structure
 
@@ -29,19 +40,21 @@ This Terraform project is organized to separate concerns and improve readability
 
 ```
 terraform-docker-nginx/
-├── provider.tf     # Docker provider configuration
-├── variables.tf    # Input variables for the project
-├── main.tf         # Docker resources (image & container)
-├── outputs.tf      # Terraform outputs (URLs, etc.)
-└── README.md       # Project documentation
+├── main.tf             # Docker resources (image & container)
+├── nginx-browser.png   # output of nginx container running on browser
+├── outputs.tf          # Terraform outputs (URLs, etc.)
+├── providers.tf        # Docker provider configuration
+├── README.md           # Project documentation
+├── terraform.tfvars    # Input values for the variables
+└── variables.tf        # Input variables for the project
 ```
 
 **Explanation:**
-- `provider.tf` → Configures Terraform to use the Docker provider.
+- `providers.tf` → Configures Terraform to use the Docker provider.
 - `variables.tf` → Declares input variables like container name and ports.
-- `main.tf` → Defines Docker resources (image and container).
-- `outputs.tf` → Displays URLs or other useful outputs after `terraform apply`.
-- `README.md` → Documentation and usage instructions.
+- `main.tf`      → Defines Docker resources (image and container).
+- `outputs.tf`   → Displays URLs or other useful outputs after `terraform apply`.
+- `README.md`    → Documentation and usage instructions.
 
 ---
 
@@ -50,7 +63,7 @@ terraform-docker-nginx/
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/wayneisbatman/terraform-docker-nginx.git
+   git clone https://github.com/WAYNEisBATMAN/terraform-docker-nginx.git
    cd terraform-docker-nginx
 
    ```
@@ -85,7 +98,7 @@ terraform-docker-nginx/
    **b) External access (from your laptop/browser)**
 
    ```bash
-   http://<ec2-public-ip>:8080
+   http://<vm/ec2-public-ip>:8080
 
    ```
    
@@ -102,3 +115,23 @@ terraform-docker-nginx/
 Here’s how Nginx looks when accessed externally via the EC2 public IP:
 
 ![Nginx in Browser](nginx-browser.png)
+
+
+
+
+
+### Common Troubleshooting
+
+NSG inbound rule for NGINX (Azure)
+Field	Value
+Source	Any (or your IP)
+Source port	*
+Destination	Any
+Destination port	8080 (or 80)
+Protocol	TCP
+Action	Allow
+Priority	350
+
+
+
+
