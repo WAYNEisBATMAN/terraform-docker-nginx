@@ -84,6 +84,11 @@ terraform-docker-nginx/
 
 4. **Deploy the infrastructure**
    ```bash
+   terraform apply 
+
+   ```
+Type yes when ask for approval OR use below command
+   ```bash
    terraform apply -auto-approve
 
    ```
