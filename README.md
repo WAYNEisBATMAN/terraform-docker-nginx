@@ -20,6 +20,8 @@ This project demonstrates **Infrastructure as Code (IaC)** by provisioning an **
 
 ## 🛠️ Prerequisites
 
+Make sure you have the following installed:
+
 - Infrastructure Provisioning: [Terraform](https://developer.hashicorp.com/terraform/downloads) >= 1.12
 - Container Runtime: [Docker](https://docs.docker.com/get-docker/) installed and running  
 
