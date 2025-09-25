@@ -52,26 +52,8 @@ terraform-docker-nginx/
 ```
 
 **Explanation:**
-- `main.tf`            → Provisions the Nginx Docker image and container, sets up port mappings.
-- `nginx-browser.png`  → Screenshot of the Nginx welcome page in a browser.
-- `outputs.tf`         → Defines output values (e.g., URLs) shown after successfull `terraform apply`.
-- `providers.tf`       → Configures the Docker provider for Terraform.
-- `README.md`          → Project documentation and usage instructions.
-- `terraform.tfvars`   → User-supplied values for input variables.
-- `variables.tf`       → Declares input variables (container/image name, ports).
 
-| Files             | Purpose                                                                                   |
-|------------------|-------------------------------------------------------------------------------------------|
-| main.tf           | Provisions the Nginx Docker image and container, sets up port mappings.                  |
-| nginx-browser.png | Screenshot of the Nginx welcome page in a browser.                                        |
-| outputs.tf        | Defines output values (e.g., URLs) shown after successful `terraform apply`.             |
-| providers.tf      | Configures the Docker provider for Terraform.                                             |
-| README.md         | Project documentation and usage instructions.                                             |
-| terraform.tfvars  | User-supplied values for input variables.                                                 |
-| variables.tf      | Declares input variables (container/image name, ports).                                   |
-
-
-|Files                 |Purpose                                                                                   |
+|Files                 |Purpose                                                                                    |
 |----------------------|-------------------------------------------------------------------------------------------|
 | main.tf              | Provisions the Nginx Docker image and container, sets up port mappings.                   |
 | nginx-browser.png    | Screenshot of the Nginx welcome page in a browser.                                        |
