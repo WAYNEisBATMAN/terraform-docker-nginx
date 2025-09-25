@@ -87,7 +87,7 @@ terraform-docker-nginx/
    terraform apply 
 
    ```
-   Type yes when ask for approval OR use below command
+   Type 'yes' when ask for approval OR use below command
    ```bash
    terraform apply -auto-approve
 
@@ -111,7 +111,12 @@ terraform-docker-nginx/
    
 6. **Clean up resources**
    ```bash
-   terraform destroy -auto-approve
+   terraform destroy
+
+   ```
+   Type 'yes' when ask for approval OR use below command
+   ```bash
+   terraform apply -auto-approve
 
    ```
 
