@@ -76,21 +76,21 @@ terraform-docker-nginx/
 
    ```
 
-3. **Plan the deployment**
+3. **Review the plan**
    ```bash
    terraform plan
 
    ```
 
-4. **Apply the configuration**
+4. **Deploy the infrastructure**
    ```bash
    terraform apply -auto-approve
 
    ```
 
-5. **Access Nginx**
+5. **Access your Nginx server**
 
-   **a) Local access (inside the EC2 instance)**
+   **a) Local access (inside the VM/EC2 instance)**
 
    ```bash
    http://localhost:8080
@@ -104,7 +104,7 @@ terraform-docker-nginx/
 
    ```
    
-6. **Destroy resources**
+6. **Clean up resources**
    ```bash
    terraform destroy -auto-approve
 
@@ -112,17 +112,15 @@ terraform-docker-nginx/
 
 ---
 
-### 🖼️ Nginx Output in Browser
+### 🖼️ Nginx Welcome Page
 
 Here’s how Nginx looks when accessed externally via the EC2 public IP:
 
 ![Nginx in Browser](nginx-browser.png)
 
+---
 
-
-
-
-### Common Troubleshooting
+🐛 Troubleshooting
 
 NSG inbound rule for NGINX (Azure)
 Field	Value
@@ -135,5 +133,13 @@ Action	Allow
 Priority	350
 
 
+Common issues and solutions:
+
+Issue	Solution
+docker daemon not running	Start Docker: sudo systemctl start docker
+container name already exists	Run terraform destroy first
+port already in use	Change external_port in variables
+permission denied	Add user to docker group: sudo usermod -aG docker $USER
 
 
+---
