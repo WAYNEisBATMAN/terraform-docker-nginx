@@ -52,11 +52,13 @@ terraform-docker-nginx/
 ```
 
 **Explanation:**
-- `providers.tf` → Configures Terraform to use the Docker provider.
-- `variables.tf` → Declares input variables like container name and ports.
-- `main.tf`      → Defines Docker resources (image and container).
-- `outputs.tf`   → Displays URLs or other useful outputs after `terraform apply`.
-- `README.md`    → Documentation and usage instructions.
+- `main.tf`            → Provisions the Nginx Docker image and container, sets up port mappings.
+- `nginx-browser.png`  → Screenshot of the Nginx welcome page in a browser.
+- `outputs.tf`         → Defines output values (e.g., URLs) shown after successfull `terraform apply`.
+- `providers.tf`       → Configures the Docker provider for Terraform.
+- `README.md`          → Project documentation and usage instructions.
+- `terraform.tfvars`   → User-supplied values for input variables.
+- `variables.tf`       → Declares input variables (container/image name, ports).
 
 ---
 
@@ -87,7 +89,7 @@ terraform-docker-nginx/
    terraform apply 
 
    ```
-   Type 'yes' when ask for approval OR use below command
+   Type 'yes' when asks for approval OR use below command
    ```bash
    terraform apply -auto-approve
 
@@ -114,7 +116,7 @@ terraform-docker-nginx/
    terraform destroy
 
    ```
-   Type 'yes' when ask for approval OR use below command
+   Type 'yes' when asks for approval OR use below command
    ```bash
    terraform apply -auto-approve
 
