@@ -87,7 +87,7 @@ terraform-docker-nginx/
    terraform apply 
 
    ```
-Type yes when ask for approval OR use below command
+   Type yes when ask for approval OR use below command
    ```bash
    terraform apply -auto-approve
 
