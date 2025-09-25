@@ -120,7 +120,7 @@ Here’s how Nginx looks when accessed externally via the EC2 public IP:
 
 ---
 
-### 🐛 Troubleshooting
+## 🐛⚠️ Troubleshooting
 
 NSG inbound rule for NGINX (Azure)
 Field	Value
@@ -132,10 +132,8 @@ Protocol	TCP
 Action	Allow
 Priority	350
 
+Common issues and their solutions:
 
-Common issues and solutions:
-
-## ⚠️ Common Issues & Solutions
 
 | Issue                          | Solution                                                  |
 |------------------------------- |-----------------------------------------------------------|
