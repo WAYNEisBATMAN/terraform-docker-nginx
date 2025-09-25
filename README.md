@@ -61,7 +61,7 @@ terraform-docker-nginx/
 - `variables.tf`       → Declares input variables (container/image name, ports).
 
 
-| Files                | Purpose                                                                                   |
+|Files                 |Purpose                                                                                   |
 |----------------------|-------------------------------------------------------------------------------------------|
 | main.tf              | Provisions the Nginx Docker image and container, sets up port mappings.                   |
 | nginx-browser.png    | Screenshot of the Nginx welcome page in a browser.                                        |
