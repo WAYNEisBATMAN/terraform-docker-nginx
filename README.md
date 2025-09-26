@@ -138,16 +138,6 @@ Here’s how Nginx looks when accessed externally via the EC2 public IP:
 
 ## 🐛 Troubleshooting
 
-NSG inbound rule for NGINX (Azure)
-Field	Value
-Source	Any (or your IP)
-Source port	*
-Destination	Any
-Destination port	8080 (or 80)
-Protocol	TCP
-Action	Allow
-Priority	350
-
 Common issues and their solutions:
 
 
